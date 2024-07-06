@@ -36,6 +36,7 @@ public class NullableStringValueObject<T> : ValueObject<T>, IComparable<T>
 
     public int CompareTo(T? other)
     {
+        ArgumentNullException.ThrowIfNull(other, nameof(other));
         return string.Compare(_value, other._value);
     }
 

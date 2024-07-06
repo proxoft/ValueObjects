@@ -18,6 +18,14 @@ public static class GuardFunctions
         }
     }
 
+    public static void ThrowIfNotInRange(ulong value, ulong min = ulong.MinValue, ulong max = int.MaxValue)
+    {
+        if (value < min || value > max)
+        {
+            throw new ArgumentOutOfRangeException($"value {value} was expected to be between {min} and {max}");
+        }
+    }
+
     public static void ThrowIfNotInRange(double value, double min = double.MinValue, double max = double.MaxValue)
     {
         if (value < min || value > max)
@@ -42,17 +50,12 @@ public static class GuardFunctions
         }
     }
 
-    public static void ThrowIfLength(
-        string? value,
-        int maxLength)
+    public static void ThrowIfLength(string? value, int maxLength)
     {
         ThrowIfLengthNotInRange(value, minLength: 0, maxLength: maxLength);
     }
 
-    public static void ThrowIfLengthNotInRange(
-        string? value,
-        int minLength = 0,
-        int maxLength = int.MaxValue)
+    public static void ThrowIfLengthNotInRange(string? value, int minLength = 0, int maxLength = int.MaxValue)
     {
         if((value?.Length ?? 0) < minLength || (value?.Length ?? 0) > maxLength)
         {
