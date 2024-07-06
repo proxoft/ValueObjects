@@ -4,5 +4,18 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <PackageTags>Value Objects, Immutability, DDD</PackageTags>
         <Description>Basic implementation for primitive value objects (int, decimal, etc.)</Description>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>logo.png</PackageIcon>
+        <Title>Value Objects</Title>
     </PropertyGroup>
+    <ItemGroup>
+      <None Include="..\..\logo.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
 </Project>
