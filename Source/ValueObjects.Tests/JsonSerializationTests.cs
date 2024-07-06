@@ -9,8 +9,8 @@ public class JsonSerializationTests
     private readonly JsonSerializerOptions _options = new()
     {
         Converters = {
-        new IntValueObjectConverter<TestValueObject>()
-    }
+            new IntValueObjectConverter<TestValueObject>()
+        }
     };
 
     [Fact]
@@ -18,7 +18,6 @@ public class JsonSerializationTests
     {
         TestValueObject tvo = new(10);
         string json = JsonSerializer.Serialize(tvo, _options);
-        
 
         json
             .Should()

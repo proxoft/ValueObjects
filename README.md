@@ -44,3 +44,27 @@ public class Lat : DecimalValueObject<Lat>
     }
 }
 ```
+
+For System.Text.Json use JsonConverters:
+
+```
+public class Foo(int value) : IntValueObject<Foo>(value, minValue: 5)
+{
+}
+
+JsonSerializerOptions _options = new()
+{
+    Converters = {
+        new IntValueObjectConverter<Foo>()
+    }
+};
+
+// later in code
+Foo f = new(15);
+string json = JsonSerializer.Serialize(f, _options);
+// json is "15"
+
+Foo? deserialized = JsonSerializer.Deserialize<Foo>("25", _options);
+// deserialized == new Foo(25)
+
+```
