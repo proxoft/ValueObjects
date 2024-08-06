@@ -9,7 +9,7 @@ public abstract class IntValueObject<T> : ValueObject<T>, IComparable<T>
     private readonly int _value; 
     
     protected IntValueObject(
-        int value) : this(value, v => GuardFunctions.ThrowIfNotInRange(v))
+        int value) : this(value, null)
     {
     }
 

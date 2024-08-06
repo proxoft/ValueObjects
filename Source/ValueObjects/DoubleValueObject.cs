@@ -10,9 +10,13 @@ public abstract class DoubleValueObject<T> : ValueObject<T>, IComparable<T>
     private readonly double _value;
     private readonly double _equalityTolerance;
 
+    protected DoubleValueObject(double value) : this(value, equalityTolerance: 0.001)
+    {
+    }
+
     protected DoubleValueObject(
         double value,
-        double equalityTolerance = 0.001)
+        double equalityTolerance)
         : this(value, equalityTolerance, v => GuardFunctions.ThrowIfNotInRange(v))
     {
     }

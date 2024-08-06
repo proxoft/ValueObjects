@@ -9,7 +9,7 @@ public abstract class ShortValueObject<T> : ValueObject<T>, IComparable<T>
     private readonly short _value; 
     
     protected ShortValueObject(
-        short value) : this(value, v => GuardFunctions.ThrowIfNotInRange(v))
+        short value) : this(value, null)
     {
     }
 

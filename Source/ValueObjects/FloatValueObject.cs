@@ -10,9 +10,13 @@ public abstract class FloatValueObject<T> : ValueObject<T>, IComparable<T>
     private readonly float _value;
     private readonly float _equalityTolerance;
 
+    protected FloatValueObject(float value):this(value, equalityTolerance: 0.001f)
+    {
+    }
+
     protected FloatValueObject(
         float value,
-        float equalityTolerance = 0.001f)
+        float equalityTolerance)
         : this(value, equalityTolerance, v => GuardFunctions.ThrowIfNotInRange(v))
     {
     }
