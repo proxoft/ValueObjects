@@ -27,6 +27,11 @@ public class DefaultValueObjectJsonConverter(Func<Type, bool> ignorePredicate) :
     {
     }
 
+    /// <summary>
+    /// Determines whether the type can be converted.
+    /// </summary>
+    /// <param name="typeToConvert">The type is checked as to whether it can be converted.</param>
+    /// <returns>True if the type is inherited from any of <see cref="ValueObject{T}"/> (for example Foo : <see cref="IntValueObject{T}" />), if it contains a constructor with 1 argument, if it is not "ignored" by predicate function, otherwise false</returns>
     public override bool CanConvert(Type typeToConvert)
     {
         if (_ignorePredicate(typeToConvert))

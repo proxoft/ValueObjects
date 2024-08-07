@@ -20,8 +20,6 @@ internal class GuidSample(Guid value) : GuidValueObject<GuidSample>(value)
 {
 }
 
-
-
 internal class IntSample(int value) : IntValueObject<IntSample>(value)
 {
 }
