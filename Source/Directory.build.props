@@ -14,5 +14,6 @@
         <RepositoryUrl>https://github.com/proxoft/ValueObjects.git</RepositoryUrl>
         <PackageProjectUrl>https://github.com/proxoft/ValueObjects</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Version>1.1.0</Version>
     </PropertyGroup>
 </Project>
