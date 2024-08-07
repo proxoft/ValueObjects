@@ -12,18 +12,18 @@ public class DefaultValueObjectJsonConverterTest
     private readonly JsonSerializerOptions _options = new();
 
     [Theory]
-    [InlineData(typeof(CharSample), typeof(CharValueObjectConverter<CharSample>))]
-    [InlineData(typeof(DecimalSample), typeof(DecimalValueObjectConverter<DecimalSample>))]
-    [InlineData(typeof(DoubleSample), typeof(DoubleValueObjectConverter<DoubleSample>))]
-    [InlineData(typeof(FloatSample), typeof(FloatValueObjectConverter<FloatSample>))]
-    [InlineData(typeof(GuidSample), typeof(GuidValueObjectConverter<GuidSample>))]
-    [InlineData(typeof(IntSample), typeof(IntValueObjectConverter<IntSample>))]
-    [InlineData(typeof(LongSample), typeof(LongValueObjectConverter<LongSample>))]
-    [InlineData(typeof(NullableStringSample), typeof(NullableStringValueObjectConverter<NullableStringSample>))]
-    [InlineData(typeof(ShortSample), typeof(ShortValueObjectConverter<ShortSample>))]
-    [InlineData(typeof(StringSample), typeof(StringValueObjectConverter<StringSample>))]
-    [InlineData(typeof(UIntSample), typeof(UIntValueObjectConverter<UIntSample>))]
-    [InlineData(typeof(ULongSample), typeof(ULongValueObjectConverter<ULongSample>))]
+    [InlineData(typeof(CharSample), typeof(CharValueObjectJsonConverter<CharSample>))]
+    [InlineData(typeof(DecimalSample), typeof(DecimalValueObjectJsonConverter<DecimalSample>))]
+    [InlineData(typeof(DoubleSample), typeof(DoubleValueObjectJsonConverter<DoubleSample>))]
+    [InlineData(typeof(FloatSample), typeof(FloatValueObjectJsonConverter<FloatSample>))]
+    [InlineData(typeof(GuidSample), typeof(GuidValueObjectJsonConverter<GuidSample>))]
+    [InlineData(typeof(IntSample), typeof(IntValueObjectJsonConverter<IntSample>))]
+    [InlineData(typeof(LongSample), typeof(LongValueObjectJsonConverter<LongSample>))]
+    [InlineData(typeof(NullableStringSample), typeof(NullableStringValueObjectJsonConverter<NullableStringSample>))]
+    [InlineData(typeof(ShortSample), typeof(ShortValueObjectJsonConverter<ShortSample>))]
+    [InlineData(typeof(StringSample), typeof(StringValueObjectJsonConverter<StringSample>))]
+    [InlineData(typeof(UIntSample), typeof(UIntValueObjectJsonConverter<UIntSample>))]
+    [InlineData(typeof(ULongSample), typeof(ULongValueObjectJsonConverter<ULongSample>))]
     public void CanConvert(Type typeToConvert, Type expectedConverterType)
     {
         bool canConvert = _converter.CanConvert(typeToConvert);

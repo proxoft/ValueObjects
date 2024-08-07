@@ -77,12 +77,12 @@ file static class TypesAndConverters
         Type[] converterTypes = assembly
             .GetTypes()
             .Where(t => t.Name is not null
-                && t.Name.EndsWith("ValueObjectConverter`1"))
+                && t.Name.EndsWith("ValueObjectJsonConverter`1"))
             .ToArray();
 
         _typeConverters = valueObjectTypes
             .Select(valueObjectType => {
-                string converterName = valueObjectType.Name![..^2] + "Converter`1";
+                string converterName = valueObjectType.Name![..^2] + "JsonConverter`1";
                 Type? converterType = converterTypes.FirstOrDefault(c => c.Name == converterName);
                 return (valueObjectType, converterType);
             })
