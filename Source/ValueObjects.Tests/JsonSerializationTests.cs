@@ -9,7 +9,7 @@ public class JsonSerializationTests
     private readonly JsonSerializerOptions _options = new()
     {
         Converters = {
-            new IntValueObjectConverter<TestValueObject>()
+            new IntValueObjectJsonConverter<TestValueObject>()
         }
     };
 

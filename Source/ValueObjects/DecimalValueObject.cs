@@ -8,6 +8,10 @@ public abstract class DecimalValueObject<T> : ValueObject<T>, IComparable<T>
 {
     private readonly decimal _value;
 
+    protected DecimalValueObject(decimal value) : this(value, null)
+    {
+    }
+
     protected DecimalValueObject(
         decimal value,
         decimal minValue = decimal.MinValue,

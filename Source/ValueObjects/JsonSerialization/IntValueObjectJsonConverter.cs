@@ -3,11 +3,11 @@ using System.Text.Json.Serialization;
 
 namespace Proxoft.ValueObjects.JsonSerialization;
 
-public class UIntValueObjectConverter<T> : JsonConverter<T> where T : UIntValueObject<T>
+public class IntValueObjectJsonConverter<T> : JsonConverter<T> where T : IntValueObject<T>
 {
     public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        uint n = reader.GetUInt32();
+        int n = reader.GetInt32();
         return (T)Activator.CreateInstance(typeof(T), n)!;
     }
 
