@@ -68,3 +68,27 @@ Foo? deserialized = JsonSerializer.Deserialize<Foo>("25", _options);
 // deserialized == new Foo(25)
 
 ```
+
+of a generic approach
+
+```
+public class Foo(int value) : IntValueObject<Foo>(value, minValue: 5)
+{
+}
+
+JsonSerializerOptions _options = new()
+{
+    Converters = {
+        new DefaultValueObjectJsonConverter()
+    }
+};
+
+// later in code
+Foo f = new(15);
+string json = JsonSerializer.Serialize(f, _options);
+// json is "15"
+
+Foo? deserialized = JsonSerializer.Deserialize<Foo>("25", _options);
+// deserialized == new Foo(25)
+
+```
